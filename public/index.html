@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Genealogy App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="CHANGE ME">
+    <meta name="keywords" content="CHANGE ME">
+    <meta name="author" content="CHANGE ME">
+    <!-- Load jquery, bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <!-- Custom CSS End -->
+</head>
+<body>
+    <h3>Genealogy App</h3>
+    Assignment #3. Written by Christopher Oehler 0972383.<br>
+    <hr>
+
+	<!-- * * * * * * * *-->
+    <!-- Status Entries -->
+    <!-- * * * * * * * *-->
+
+    <div id="statustitle"> Status Bar </div>
+
+    <div id="status"> 
+
+    	<table id="statustable"> 
+
+    		<tr>
+    			<th> Error Report </th>
+    		</tr>
+
+    	</table>
+
+    </div>
+    
+    <div id="statuscontrol">
+	
+		<input type="submit" name="clearLog" id="clearlog" value="Clear Status Log">
+		
+	</div>
+    
+
+	<!-- * * * * * * * * *-->
+ 	<!-- File Log Entries -->
+ 	<!-- * * * * * * * * *-->
+
+    <div id="filelogtitle"> File Log Table</div>
+
+    <div id="filelog"> 
+
+    	<table id="filelogtable"> 
+
+    		<tr>
+    			<th> File Name </th>
+    			<th> Source </th>
+    			<th> GEDC Version </th>
+    			<th> encoding </th>
+    			<th> Submitter name </th>
+    			<th> Submitter Address </th>
+    			<th> Number of individuals </th>
+    			<th> Number of families </th>
+    		</tr>
+
+    	</table>
+    	
+    </div>
+    
+    <div id="filelogupload">
+		
+		Upload a File: 
+		
+		<input type="file" name="uploadFile" id="uploadFile">
+	
+		<input type="button" name="submitFile" id="submitFile" value="Send File">
+		
+	</div>
+	
+	<div id="filelogcreate">
+		
+		Create Simple GEDCOM:<br>
+		
+		<p>
+			<label for="filename">File Name:</label>
+			<input type="text" id="filename">.ged <br>
+		</p>
+		
+		
+		<p>
+			<label for="subname">Submitter Name:</label>
+			<input type="text" id="subname"><br>
+		</p>
+		
+		<p>
+			<label for="subaddr">Submitter Address:</label>
+			<input type="text" id="subaddr"><br>
+		</p>
+		
+		<p>
+			<label for="showencode">File Encoding:</label>
+			<select id="showencode">
+				<option>ASCII</option>
+				<option>ANSEL</option>
+				<option>UTF-8</option>
+				<option>UNICODE</option>
+			</select>
+		</p>
+		
+		
+		<input type="submit" id="createFile" value="Create File">
+		
+	</div>
+	
+	
+	<!-- * * * * * * * *-->
+	<!-- GEDCOM Entries -->
+	<!-- * * * * * * * *-->
+
+	<div id="gedcomtitle">GEDCOM Individual View</div>
+
+    <div id="gedcom">  
+
+    	<table id="gedcomtable"> 
+
+    		<tr>
+    			<th> Given name </th>
+    			<th> Surname </th>
+    			<th> Sex </th>
+    			<th> Family size </th>
+    		</tr>
+
+    	</table>
+
+    </div> 
+    
+    <div id="gedcomsel"> Select GEDCOM File to Veiw:
+		
+		<select id="showsel">
+		</select>
+		
+		<input type="submit" id="subfilesel" value="Select as Current File">
+		
+	</div>
+	
+	<div id="indadd">
+		
+		Add an Individual:<br>
+		
+		<p>
+			<label for="indgivn">First Name:</label>
+			<input type="text" id="indgivn"><br>
+		</p>
+		
+		
+		<p>
+			<label for="indsurn">Last Name:</label>
+			<input type="text" id="indsurn"><br>
+		</p>
+		
+		<input type="submit" id="sendInd" value="Add Person">
+		
+	</div>
+	
+	<div id="gedcomtitlegen"> GEDCOM Generation View </div>
+	
+	<div id="gedcomgen">  
+
+    	<table id="gedcomtablegen"> 
+
+    		<tr>
+    		</tr>
+
+    	</table>
+
+    </div> 
+	
+	<div class ="dropdown" id="gedcomdes"> Select Individual to View Descendants:
+		
+		<select id="showdes">
+		</select>
+		
+		Number of Generations: <input type="number" id="numdes" required value="0" min="0">
+		
+		<input type="button" name="submitFile" id="desSend" value="Send Query">
+		
+	</div>
+	
+	<div class ="dropdown" id="gedcoman"> Select Individual to View Ancestors:
+		
+		<select id="showan">
+		</select>
+		
+		Number of Generations: <input type="number" id="numan" required value="0" min="0">
+		
+		<input type="button" name="submitFile" id="anSend" value="Send Query">
+		
+	</div>
+	
+	<!-- * * * * * * * *-->
+	<!-- MY SQL Entries -->
+	<!-- * * * * * * * *-->
+
+	<div id="dbtitle">Data Base Commands</div>
+	
+	<div id="dbtablediv">  
+
+    	<table id="dbtable"> 
+
+    	</table>
+
+    </div>
+     
+	<div id="dbcred">
+		
+		Enter Credentials:<br>
+		
+		<p>
+			<label for="uname">User Name:</label>
+			<input type="text" id="uname">
+		</p>
+		
+		<p>
+			<label for="pass">Password:</label>
+			<input type="text" id="pass">
+		</p>
+		
+		<p>
+			<label for="dbname">Data Base Name:</label>
+			<input type="text" id="dbname">
+		</p>
+		
+		<input type="submit" id="connectDB" value="Connect">
+		
+		<input type="submit" id="dbhelp" value="Help">
+		
+		
+	</div>
+	
+
+	
+	<div id="db">
+		
+		Data Base Control Commands: 
+	
+		<input type="button" name="buildDB" id="buildDB" value="Build">
+		
+		<input type="button" name="clearDB" id="clearDB" value="Clear">
+		
+		<input type="button" name="displayDB" id="displayDB" value="Display">
+		
+	</div>
+	
+	<div id="dbquery">
+		
+		Data Base Query Commands:<br>
+		
+		<p>
+			<label for="q1">Custom Query: SELECT</label>
+			<input type="text" id="q1">
+			<input type="submit" id="q1sub" value="Send Query"><br>
+		</p>
+		
+		<p>
+			<label for="q2sub">Show all People:</label>
+			<input type="submit" id="q2sub" value="Send Query"><br>
+		</p>
+		
+		<p>
+			<label for="q3">Show all People from File:</label>
+			<select id="q3">
+			</select>
+			<input type="submit" id="q3sub" value="Send Query"><br>
+		</p>
+		
+		<p>
+			<label for="q4">Show all People with same Surname as:</label>
+			<select id="q4"> 
+			</select>(To change Individuals, change the Selected File)
+			<input type="submit" id="q4sub" value="Send Query"><br>
+		</p>
+		
+		<p>
+			<label for="q5">Show all Files with this Encoding:</label>
+			<select id="q5">
+				<option>ASCII</option>
+				<option>ANSEL</option>
+				<option>UTF-8</option>
+				<option>UNICODE</option>
+			</select>
+			<input type="submit" id="q5sub" value="Send Query"><br>
+		</p>
+		
+		<p>
+			<label for="q6">Show all People with same Given Name as:</label>
+			<select id="q6">
+			</select> (To change Individuals, change the Selected File)
+			<input type="submit" id="q6sub" value="Send Query"><br>
+		</p>
+		
+		
+		
+
+		
+		
+	</div>
+	
+	
+    <!-- Leave me at the bottom of body -->
+    <script src="/index.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,370 @@
+html {
+    width: 60%;
+    height: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+    background-color: #FFFFFF;
+}
+body {
+    height: 100%;
+    min-height: 100%;
+    line-height: 1.75;
+    background-color: #FFFFFF;
+}
+
+a:link:hover {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    text-decoration: underline;
+    cursor: pointer;
+    cursor: hand;
+}
+input[type=submit], button {
+    cursor: pointer;
+    cursor: hand;
+}
+@media(max-width: 900px) {
+    html {
+        font-size: 14px !important;
+        width: 80% !important;
+    }
+}
+@media(max-width: 480px) {
+    html {
+        font-size: 12px !important;
+        width: 90% !important;
+    }
+}
+@media(max-width: 320px) {
+    html {
+        font-size: 12px !important;
+        width: 100% !important;
+    }
+}
+
+/* - - - - - - - */
+/* COLOR PRESETS */
+/* - - - - - - - */
+
+/* - - - - -*/
+/* DEFAULTS */
+/* - - - - -*/
+
+form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell; }
+
+div{
+
+	border:#000 solid 1;
+    width:100%;
+    color: #000;
+    box-shadow: 3px 3px 5px #888888;
+}
+
+/* - - - - - -*/
+/* STATUS BAR */
+/* - - - - - -*/
+
+
+input{
+	
+	/*
+    background-color: #d3d3d3;
+    border: 0;
+    color: #000;
+    border-radius: 3px;
+    */
+    margin-bottom: 8px;
+    margin-top: 8px;
+    margin-right: 8px;
+    margin-left: 8px;
+    display: table-cell;
+
+}
+
+/* - - - - - - - - - -*/
+/* Status Bar Entries */
+/* - - - - - - - - - -*/
+
+#statustitle{
+	border:1px solid black;
+    border-radius: 10px 10px 0px 0px;
+    background-color: #f08080;
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: 0;
+}
+
+#status{
+	height: 150px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    border:#000 solid 1;
+    background-color: #f0b0b0;
+    box-shadow: 3px 3px 5px #888888;
+}
+
+#statuscontrol{
+	padding-left: 30px;
+	border:1px solid black;
+	background-color: #f0b0b0;
+    box-shadow: 3px 3px 5px #888888;
+    margin-bottom: 60px;
+}
+
+#statustable tr td, #statustable tr th{
+    width: 5%;
+    text-align: center;
+}
+
+/* - - - - - - - - -*/
+/* File Log Entries */
+/* - - - - - - - - -*/
+
+#filelogtitle{
+	border:1px solid black;
+	border-radius: 10px 10px 0px 0px;
+    background-color: #80f080;
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: 0;
+
+}
+
+#filelog{
+    height: 150px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    box-shadow: 3px 3px 5px #888888;
+    background-color: #b0f0b0;
+}
+
+#filelogtable tr td, #filelogtable tr th{
+    width: 10%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#filelogupload{
+	padding-left: 30px;
+	border:1px solid black;
+	background-color: #b0f0b0;
+    box-shadow: 3px 3px 5px #888888;
+    border-bottom: 0;
+    border-t: 0;
+}
+
+#filelogcreate{
+	padding-left: 30px;
+	border:1px solid black;
+	background-color: #b0f0b0;
+    box-shadow: 3px 3px 5px #888888;
+    margin-bottom: 60px;
+}
+
+/* - - - - - - - -*/
+/* GEDCOM Entries */
+/* - - - - - - - -*/
+
+#gedcomtitle{
+	border:1px solid black;
+	border-radius: 10px 10px 0px 0px;
+    color: #000;
+    background-color: #8080f0;
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: 0;
+}
+
+#gedcom{
+    height: 150px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    background-color: #b0b0f0;
+    box-shadow: 3px 3px 5px #888888;
+}
+
+#gedcomtable tr td, #gedcomtable tr th{
+    width: 5%;
+    text-align: center;
+}
+
+#gedcomsel{
+	padding-left: 30px;
+	border:1px solid black;
+    background-color: #b0b0f0;
+    border-bottom: 0;
+}
+
+#indadd{
+	border-top: 0;
+	padding-left: 30px;
+	border:1px solid black;
+    background-color: #b0b0f0;
+	margin-bottom: 60px;
+}
+
+#gedcomtitlegen{
+	border:1px solid black;
+	border-radius: 10px 10px 0px 0px;
+    color: #000;
+    background-color: #8080f0;
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: 0;
+}
+
+#gedcomgen{
+    height: 150px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    background-color: #b0b0f0;
+    box-shadow: 3px 3px 5px #888888;
+}
+
+#gedcomtablegen tr td, #gedcomtablegen tr th{
+    width: 5%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+#gedcomdes{
+	padding-left: 30px;
+	border:1px solid black;
+    background-color: #b0b0f0;
+    position: relative;
+    display: inline-block;
+    border-bottom: 0;
+    border-top: 0;
+}
+
+#gedcoman{
+	padding-left: 30px;
+	border:1px solid black;
+    background-color: #b0b0f0;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 60px;
+}
+
+/* - - - - - - - -*/
+/* MY SQL Entries */
+/* - - - - - - - -*/
+
+#dbtitle{
+	border:1px solid black;
+	border-radius: 10px 10px 0px 0px;
+    color: #000;
+    background-color: #d070d0;
+    text-align: center;
+    font-size: 1.5em;
+    border-bottom: 0;
+}
+
+#dbcred{
+	padding-left: 30px;
+	border:1px solid black;
+    background-color: #e0b0f0;
+    position: relative;
+    display: inline-block;
+    border-bottom: 0;
+}
+
+#dbtable tr td, #dbtable tr th{
+    width: 5%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+#dbtablediv{
+    height: 150px;
+    margin: 0 auto;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    background-color: #e0b0f0;
+    box-shadow: 3px 3px 5px #888888;
+}
+
+#db{
+	padding-left: 30px;
+	border:1px solid black;
+    background-color: #e0b0f0;
+    position: relative;
+    display: inline-block;
+    border-bottom: 0;
+}
+
+#dbquery{
+	padding-left: 30px;
+	border:1px solid black;
+    background-color: #e0b0f0;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 60px;
+}
+
+
+/* - - - - - - - - -*/
+/* Drop Down Tables */
+/* - - - - - - - - -*/
+
+#showsel{
+    margin-bottom: 6px;
+    margin-top: 6px;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+#showdes{
+    margin-bottom: 6px;
+    margin-top: 6px;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+#showan{
+    margin-bottom: 6px;
+    margin-top: 6px;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+#q3{
+    margin-bottom: 6px;
+    margin-top: 6px;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+#q4{
+    margin-bottom: 6px;
+    margin-top: 6px;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+#q5{
+    margin-bottom: 6px;
+    margin-top: 6px;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+#q6{
+    margin-bottom: 6px;
+    margin-top: 6px;
+    margin-right: 6px;
+    margin-left: 6px;
+}
+
+table, th, td {
+    border: 1px solid black;
+}
